@@ -1,0 +1,96 @@
+@import '../helpers/sass/starter.scss';
+@import '../helpers/sass/normalize.scss';
+@import '../helpers/sass/animate.scss';
+@import '../helpers/sass/mixins.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+
+$font-dir: '../assets/fonts';
+
+// /* 3 CormorantGaramond */
+@include font-face('Helvetica Neue LT Pro', '#{$font-dir}/HelveticaNeueLTPro-BdEx', 700, normal, otf);
+// @include font-face('Overpass', '#{$font-dir}/Overpass-Bold', 700, normal, ttf);
+@include font-face('Overpass', '#{$font-dir}/Overpass-Bold', 700, normal, woff);
+@include font-face('Overpass', '#{$font-dir}/Overpass-Regular', 400, normal, woff);
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#app {
+    min-width: 100%;
+    overflow: hidden;
+}
+
+* {
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // font: 18px/23px 'FuturaPT', Arial, Helvetica, sans-serif;
+    -webkit-overflow-scrolling:touch;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    font-family: 'Helvetica Neue LT Pro';
+    color: rgba(38, 38, 38, 0.91);
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+.aos-no-animate {
+    transition: none !important;
+}
+
+[data-no-aos] {
+    transition: none;
+}
+
+.aos-hidden {
+    visibility: hidden;
+}
+
+/** Transitions */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
+
+/** UI */
+.btn-standart {
+    font-size: 22px;
+    line-height: 111%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    color: #DF574E;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 640px) {
+    .btn-standart {
+        font-size: 16px;
+    }
+}
